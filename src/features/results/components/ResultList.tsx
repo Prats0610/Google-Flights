@@ -7,8 +7,7 @@ export default function ResultList() {
   const { itineraries, status } = useSelector(
     (state: RootState) => state.results
   );
-  if (status === "idle") return null; // Don't show anything initially
-  if (status === "loading") return <Typography>Loading...</Typography>;
+  if (status === "idle") return null;
   if (!itineraries.length) return <Typography>No flights found.</Typography>;
 
   if (!itineraries.length) return <Typography>No flights found.</Typography>;

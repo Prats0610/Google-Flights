@@ -18,8 +18,9 @@ import plane from "../../public/plane.png";
 
 type HomeProps = {
   toggleTheme: () => void;
+  darkMode: boolean;
 };
-export default function Home({ toggleTheme }: HomeProps) {
+export default function Home({ toggleTheme, darkMode }: HomeProps) {
   const dispatch = useDispatch();
   const theme = useTheme();
   const {
@@ -83,11 +84,7 @@ export default function Home({ toggleTheme }: HomeProps) {
           }}
         >
           <IconButton onClick={toggleTheme}>
-            {theme.palette.mode === "dark" ? (
-              <Brightness7Icon />
-            ) : (
-              <Brightness4Icon />
-            )}
+            {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
         </Box>
 
